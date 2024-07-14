@@ -1,7 +1,9 @@
 import { Sequelize } from "sequelize";
+
 import dotenv from "dotenv";
 dotenv.config();
 
+//connection to database
 const db = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -26,4 +28,7 @@ db.authenticate()
 //   await db.sync();
 // })();
 
+//generate table session
+
 export default db;
+

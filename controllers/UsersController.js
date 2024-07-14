@@ -11,6 +11,7 @@ export const getUsers = async (req, res) => {
     res.status(500).json({ msg: error.message });
   }
 };
+
 export const getUserById = async (req, res) => {
   try {
     const response = await Users.findOne({
@@ -24,6 +25,7 @@ export const getUserById = async (req, res) => {
     res.status(500).json({ msg: error.message });
   }
 };
+
 export const createUser = async (req, res) => {
   const { name, email, password, confPassword, role } = req.body;
   const userEmail = await Users.findOne({ where: { email: email } });
@@ -91,17 +93,14 @@ export const deleteUser = async (req, res) => {
         uuid: req.params.id,
       },
     });
-
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
     }
-
     await Users.destroy({
       where: {
         id: user.id,
       },
     });
-
     res.status(200).json({ msg: "User Deleted" });
   } catch (error) {
     res.status(500).json({ msg: "Internal server error" });

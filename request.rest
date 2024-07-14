@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
     "name" : "User 1",
-    "email" : "User1r@gmail.com",
-    "password" : "1234",
-    "confPassword" : "1234",
+    "email" : "User1re@gmail.com",
+    "password" : "1234e",
+    "confPassword" : "1234e",
     "role" : "user"
 }
 
@@ -16,20 +16,30 @@ GET http://localhost:5000/users
 
 ###
 //get Single User
-GET http://localhost:5000/user/793b1d20-fcdd-4b95-b608-72c419e8e1cf
+GET http://localhost:5000/user/9202983a-4d1c-49e7-becf-21c215ab4c15
 
 ###
 //Update User
-PATCH http://localhost:5000/user/9202983a-4d1c-49e7-becf-21c215ab4c15
+PATCH http://localhost:5000/user/793b1d20-fcdd-4b95-b608-72c419e8e1cf
 
 {
-    "name" : "Dipooooo",
-    "email" : "Dipo@gmail.com",
+    "name" : "ddd",
+    "email" : "Dipouuuudd@gmail.com",
     "password" : "1234",
     "confPassword" : "1234",
-    "role" : "admin"
+    "role" : "user"
 }
 
 ###
 //Delete User
 DELETE http://localhost:5000/user/793b1d20-fcdd-4b95-b608-72c419e8e1cf
+
+###
+//Login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "User1re@gmail.com",
+    "password" : "1234e",
+}
