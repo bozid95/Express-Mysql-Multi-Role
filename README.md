@@ -8,6 +8,7 @@
 - Login
 - Register
 - Multi Role
+- Example CRUD Product with Role Permission
 
 
 ## Run Locally
