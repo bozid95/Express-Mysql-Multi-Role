@@ -3,10 +3,10 @@ POST http://localhost:5000/user
 Content-Type: application/json
 
 {
-    "name" : "User 1",
-    "email" : "User1re@gmail.com",
-    "password" : "1234e",
-    "confPassword" : "1234e",
+    "name" : "user",
+    "email" : "user@admin.com",
+    "password" : "1234",
+    "confPassword" : "1234",
     "role" : "user"
 }
 
@@ -40,6 +40,41 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email" : "User1re@gmail.com",
-    "password" : "1234e",
+    "email" : "admin@admin.com",
+    "password" : "1234"
 }
+
+###
+//Login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "user@admin.com",
+    "password" : "1234"
+}
+
+###
+//logout
+DELETE http://localhost:5000/logout
+###
+//cek session
+GET http://localhost:5000/me
+
+###
+//get All Product
+GET http://localhost:5000/products
+
+###
+//Create Product
+POST http://localhost:5000/product
+Content-Type: application/json
+
+{
+    "name" : "Minyak",
+    "price" : 10000
+}
+
+###
+//get Single Product
+GET http://localhost:5000/product/5976520e-b6fe-4054-8a37-d87749c72ff8
